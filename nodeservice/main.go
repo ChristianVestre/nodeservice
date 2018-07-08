@@ -22,12 +22,12 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
 }
 
-func (s *server) GiveFirstName(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	return &pb.HelloReply{Message: "Hello " + in.firstName}, nil
+func (s *server) GiveFirstName(ctx context.Context, in *pb.FirstNameRequest) (*pb.FirstNameReply, error) {
+	return &pb.FirstNameReply{FirstNameReply: "Hello " + in.FirstName}, nil
 }
 
-func (s *server) GiveLastName(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	return &pb.HelloReply{Message: "Hello " + in.lastName}, nil
+func (s *server) GiveLastName(ctx context.Context, in *pb.LastNameRequest) (*pb.LastNameReply, error) {
+	return &pb.LastNameReply{LastNameReply: "Hello " + in.LastName}, nil
 }
 
 func main() {

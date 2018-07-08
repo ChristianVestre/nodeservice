@@ -4,9 +4,6 @@ package helloworld;
 
 service Greeter {
     rpc SayHello (HelloRequest) returns (HelloReply) {}
-}
-
-service GiveName {
     rpc GiveFirstName (FirstNameRequest) returns (FirstNameReply) {}
     rpc GiveLastName (LastNameRequest) returns (LastNameReply) {}
 }
