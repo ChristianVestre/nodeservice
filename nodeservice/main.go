@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/ChristianVestre/ChristiansCorner/nodeserver/pb"
+	pb "github.com/ChristianVestre/nodeservice/pb"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -20,6 +20,14 @@ type server struct{}
 // SayHello implements helloworld.GreeterServer
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
 	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
+}
+
+func (s *server) GiveFirstName(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+	return &pb.HelloReply{Message: "Hello " + in.firstName}, nil
+}
+
+func (s *server) GiveLastName(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+	return &pb.HelloReply{Message: "Hello " + in.lastName}, nil
 }
 
 func main() {

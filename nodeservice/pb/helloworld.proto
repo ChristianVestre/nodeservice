@@ -6,6 +6,27 @@ service Greeter {
     rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
 
+service GiveName {
+    rpc GiveFirstName (FirstNameRequest) returns (FirstNameReply) {}
+    rpc GiveLastName (LastNameRequest) returns (LastNameReply) {}
+}
+
+message FirstNameRequest {
+    string firstName = 1;
+}
+
+message FirstNameReply {
+    string firstNameReply = 1;
+}
+
+message LastNameRequest {
+    string lastName = 1;
+}
+
+message LastNameReply {
+    string lastNameReply = 1;
+}
+
 message HelloRequest {
     string name = 1;
 }
